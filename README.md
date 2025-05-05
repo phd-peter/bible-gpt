@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 말씀 길잡이 – 성경 Q&A ChatGPT
 
-## Getting Started
+성경에 대해 궁금한 점을 자유롭게 질문할 수 있는 원페이지 Q&A 챗봇 서비스입니다. OpenAI ChatGPT API를 활용하여 신속하고 정확한 답변을 제공합니다.
 
-First, run the development server:
+## 주요 특징
+- **실시간 채팅**: 사용자의 질문에 대해 AI가 실시간으로 답변
+- **성경 전문가 프롬프트**: 답변이 성경적으로 친절하고 정확하게 제공됨
+- **반응형 UI**: 모바일, 태블릿, 데스크탑 지원
+- **접근성**: Next.js 공식 가이드라인 준수
+- **에러 처리**: API 오류, 네트워크 오류 안내
+- **심플한 디자인**: 불필요한 메뉴 없이 채팅에 집중
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 기술 스택
+- **프레임워크**: Next.js (App Router)
+- **언어**: TypeScript, React
+- **스타일**: Tailwind CSS
+- **API 연동**: OpenAI ChatGPT API (서버리스 함수)
+
+## 폴더 구조
+```
+app/
+  page.tsx         # 메인 채팅 UI 및 로직
+  layout.tsx       # 글로벌 레이아웃
+  globals.css      # 글로벌 스타일(Tailwind)
+  api/chat/route.ts# ChatGPT API 연동 서버리스 함수
+public/            # 정적 파일 및 아이콘
+.next/             # Next.js 빌드 산출물(배포 시 생성)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 환경 변수 설정
+OpenAI API Key가 필요합니다. 루트에 `.env` 파일을 생성하고 아래와 같이 입력하세요:
+```
+OPENAI_API_KEY=sk-...
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 실행 방법
+```bash
+npm install
+npm run dev
+```
+로컬에서 [http://localhost:3000](http://localhost:3000) 접속
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 배포
+- Vercel 등 Next.js 지원 플랫폼에 손쉽게 배포 가능
+- 환경 변수(OPENAI_API_KEY) 설정 필요
 
-## Learn More
+## 참고 문서
+- [Next.js 공식 문서](https://nextjs.org/docs)
+- [OpenAI API 문서](https://platform.openai.com/docs)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+© 2024 말씀 길잡이 | bible-gpt
