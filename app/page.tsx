@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import FAQAccordion, { FAQItem } from "./components/FAQAccordion";
 import FloatingInfoButton from "./components/FloatingInfoButton";
+import ChatMessage from "./components/ChatMessage";
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -102,7 +103,11 @@ export default function Home() {
                     }`}
                     aria-label={msg.role === "user" ? "내 메시지" : "AI 답변"}
                   >
-                    {msg.content}
+                    {msg.role === "assistant" ? (
+                      <ChatMessage message={msg.content} />
+                    ) : (
+                      msg.content
+                    )}
                   </div>
                 </div>
               ))}
@@ -120,7 +125,7 @@ export default function Home() {
                 ref={inputRef}
                 type="text"
                 className="flex-1 min-w-0 rounded-xl border border-gray-300 dark:border-gray-700 px-5 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 dark:bg-black/50 shadow-sm transition-colors duration-200"
-                placeholder="성경에 대해 궁금한 점을 입력하세요..."
+                placeholder="질문을 입력하세요.. ex)누가복음 3장 21절"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
