@@ -125,13 +125,12 @@ export default function Home() {
                 ref={inputRef}
                 type="text"
                 className="flex-1 min-w-0 rounded-xl border border-gray-300 dark:border-gray-700 px-5 py-3 text-base focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white/80 dark:bg-black/50 shadow-sm transition-colors duration-200"
-                placeholder="질문을 입력하세요.. ex)누가복음 3장 21절"
+                placeholder="질문을 입력하세요.. ex)눅3:21, 시편1편"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={loading}
                 aria-label="질문 입력"
-                autoFocus
               />
               <button
                 onClick={handleSend}
