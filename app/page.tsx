@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import FAQAccordion, { FAQItem } from "./components/FAQAccordion";
+import FloatingInfoButton from "./components/FloatingInfoButton";
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -74,9 +75,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <header className="flex flex-col items-center py-8 gap-2">
-        {/* <Image src="/logo.svg" ... /> */}
-        <h1 className="text-4xl font-extrabold tracking-tight text-blue-700 dark:text-blue-200 mb-1">말씀 길잡이</h1>
+      <header className="flex flex-col items-center pt-4 pb-2 gap-2">
+        <div className="text-4xl font-extrabold tracking-tight text-blue-700 dark:text-blue-200 mb-1">말씀 길잡이</div>
       </header>
       <div className="max-w-5xl w-full mx-auto mb-2 px-2">
         <div className="text-sm text-gray-500 dark:text-gray-400 text-center leading-relaxed">
@@ -145,7 +145,8 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="py-4 text-center text-xs text-gray-400">© 2024 말씀 길잡이 | bible-gpt</footer>
+      <footer className="py-4 text-center text-xs text-gray-400">© 2025 말씀 길잡이 | BIBLE-GPT</footer>
+      <FloatingInfoButton />
     </div>
   );
 }

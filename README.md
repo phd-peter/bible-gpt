@@ -23,8 +23,10 @@ app/
   layout.tsx       # 글로벌 레이아웃
   globals.css      # 글로벌 스타일(Tailwind)
   api/chat/route.ts# ChatGPT API 연동 서버리스 함수
+  components/      # UI 컴포넌트
 public/            # 정적 파일 및 아이콘
 .next/             # Next.js 빌드 산출물(배포 시 생성)
+types/             # 타입 정의 파일
 ```
 
 ## 환경 변수 설정

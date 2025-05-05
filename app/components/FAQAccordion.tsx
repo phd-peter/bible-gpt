@@ -17,12 +17,12 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs }) => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
-      <header className="flex flex-col items-center py-8 gap-2">
+    <div className="w-full">
+      <header className="flex flex-col items-center py-0 gap-2">
         {/* ... */}
       </header>
-      <main className="flex-1 flex flex-col items-center px-2 sm:px-8 md:px-8 lg:px-0 w-full bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-black dark:to-blue-950 transition-colors duration-500">
-        <ul className="flex flex-col gap-4">
+      <main className="flex-1 flex flex-col items-center px-0 sm:px-0 md:px-0 lg:px-0 w-full transition-colors duration-500">
+        <ul className="flex flex-col gap-2">
           {faqs.map((faq, idx) => (
             <li key={idx}>
               <div className={`transition-shadow ${openIndex === idx ? "shadow-xl" : "shadow-md"} rounded-2xl bg-blue-50 dark:bg-blue-950 border border-blue-100 dark:border-blue-900`}> 
